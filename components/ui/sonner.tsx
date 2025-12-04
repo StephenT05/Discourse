@@ -16,9 +16,16 @@ export function Sonner() {
   return (
     <Toaster
       position={isMobile ? "top-center" : "bottom-right"}
-      richColors
       closeButton
-      expand
+      expand={false}
+      toastOptions={{
+        style: {
+          background: 'hsl(0 0% 20%)',
+          border: '1px solid hsl(0 0% 30%)',
+          color: 'hsl(0 0% 85%)',
+        },
+        className: 'sonner-toast',
+      }}
     />
   )
 }
