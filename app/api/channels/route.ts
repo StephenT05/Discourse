@@ -99,7 +99,7 @@ export async function POST(req: Request) {
         }
       }
 
-      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $addToSet: { members: userId } });
+      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $addToSet: { members: userId } } as any);
       return NextResponse.json({ success: true });
     }
 
@@ -130,7 +130,7 @@ export async function POST(req: Request) {
       const alreadyPending = (ch.pendingModerators || []).includes(userId);
       if (alreadyMod) return NextResponse.json({ error: 'Already a moderator' }, { status: 400 });
       if (alreadyPending) return NextResponse.json({ success: true });
-      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $addToSet: { pendingModerators: userId } });
+      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $addToSet: { pendingModerators: userId } } as any);
       return NextResponse.json({ success: true });
     }
 
@@ -200,7 +200,7 @@ export async function POST(req: Request) {
       const ch = await channelsCollection.findOne({ _id: new ObjectId(channelId) });
       if (!ch) return NextResponse.json({ error: 'Channel not found' }, { status: 404 });
       // remove from pendingModerators
-      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $pull: { pendingModerators: applicantId } });
+      await channelsCollection.updateOne({ _id: new ObjectId(channelId) }, { $pull: { pendingModerators: applicantId } } as any);
       // log activity: approver rejected applicant
       try {
         const { logActivity } = await import('@/lib/logActivity');
