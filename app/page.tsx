@@ -72,7 +72,7 @@ export default async function Home({ searchParams }: HomeProps) {
   ];
 
   return (
-  <div className="relative bg-[#F0F0F0] dark:bg-neutral-950 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')] dark:bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] bg-repeat dark:bg-repeat flex min-h-screen flex-col justify-center">
+<div className="bg-neutral-100 dark:bg-neutral-950 dark:bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] dark:bg-repeat flex min-h-screen flex-col justify-center">
     {channelName && (
       <div className="hidden md:block pointer-events-none absolute top-3 left-3 z-0 bg-transparent opacity-10 select-none">
         <div className="text-7xl font-extrabold italic uppercase tracking-wide text-gray-200 dark:text-slate-200">{channelName}• </div>
@@ -81,7 +81,7 @@ export default async function Home({ searchParams }: HomeProps) {
         )}
       </div>
     )}
-  <div className="relative z-10 mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl backdrop-blur-xs bg-white/50 dark:bg-black/30 dark:border-white">
+  <div className="relative z-10 mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-neutral-700 shadow-2xl">
           <header className="flex flex-col py-2 px-5">
             <div className="flex flex-row items-center gap-1 w-full">
               <div className="relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 md:w-16 md:h-16">
@@ -128,7 +128,7 @@ export default async function Home({ searchParams }: HomeProps) {
               </div>
             </div>
 
-            <div className="px-4 flex-1 bg-white/50 dark:bg-black/30 pb-4">
+            <div className="px-4 flex-1 bg-neutral-100 dark:bg-black/30 pb-4">
               {view === 'channels' ? (
                 <ChannelsList />
               ) : (
