@@ -92,7 +92,7 @@ export async function PUT(req: Request) {
         if (name.includes('student') && name.includes('council')) return true;
         return false;
       });
-      const isAdmin = (session.user as any).role === 'admin';
+      const isAdmin = (session.user as any).role === 'administrator';
       if (!isCouncil && !isAdmin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     } catch (e) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
@@ -130,7 +130,7 @@ export async function DELETE(req: Request) {
     const doc = await coll.findOne({ _id: new ObjectId(id) });
     if (!doc) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-    const isAdmin = (session.user as any).role === 'admin';
+    const isAdmin = (session.user as any).role === 'administrator';
     // Only allow admins or the creator to delete
     if (!isAdmin && (doc.createdById !== session.user.id)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });

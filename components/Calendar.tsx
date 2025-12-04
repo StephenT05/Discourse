@@ -30,7 +30,7 @@ export default function Calendar() {
   const [canAdd, setCanAdd] = useState(false);
   const [meLoading, setMeLoading] = useState(true);
   const [eventsExpanded, setEventsExpanded] = useState(false);
-  const isAdmin = (session as any)?.user?.role === 'admin';
+  const isAdmin = (session as any)?.user?.role === 'administrator';
   const [lastDeleted, setLastDeleted] = useState<null | { archivedId: string; event: EventItem }>(null);
   const [deletePending, setDeletePending] = useState<null | { id: string; title?: string; iso?: string }>(null);
   const [editPending, setEditPending] = useState<null | EventItem>(null);

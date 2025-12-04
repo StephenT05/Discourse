@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const rec = await delColl.findOne({ _id: new ObjectId(deletedId) });
     if (!rec) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-    const isAdmin = (session.user as any).role === 'admin';
+    const isAdmin = (session.user as any).role === 'administrator';
     // only admin or the user who deleted can restore
     if (!isAdmin && rec.deletedById !== session.user.id) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 
