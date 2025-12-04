@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       const id = body.id; const userId = body.userId;
       if (!id || !userId) return NextResponse.json({ error: 'Missing id or userId' }, { status: 400 });
       const { ObjectId } = await import('mongodb');
-      await coll.updateOne({ _id: new ObjectId(id) }, { $addToSet: { members: userId } });
+      await coll.updateOne({ _id: new ObjectId(id) }, { $addToSet: { members: userId } } as any);
       const updated = await coll.findOne({ _id: new ObjectId(id) });
       const mapped = updated ? { _id: updated._id.toString(), name: updated.name, description: updated.description || '', members: updated.members || [] } : null;
       return NextResponse.json({ success: true, group: mapped });
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       const id = body.id; const userId = body.userId;
       if (!id || !userId) return NextResponse.json({ error: 'Missing id or userId' }, { status: 400 });
       const { ObjectId } = await import('mongodb');
-      await coll.updateOne({ _id: new ObjectId(id) }, { $pull: { members: userId } });
+      await coll.updateOne({ _id: new ObjectId(id) }, { $pull: { members: userId } } as any);
       const updated = await coll.findOne({ _id: new ObjectId(id) });
       const mapped = updated ? { _id: updated._id.toString(), name: updated.name, description: updated.description || '', members: updated.members || [] } : null;
       return NextResponse.json({ success: true, group: mapped });
