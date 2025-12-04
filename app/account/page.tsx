@@ -55,7 +55,7 @@ export default async function AccountPage() {
 
   return (
     <div className="bg-[#F0F0F0] dark:bg-neutral-950 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')] dark:bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] bg-repeat dark:bg-repeat flex min-h-screen flex-col justify-center">
-      <div className="mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-neutral-700 shadow-2xl">
+      <div className="mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-transparent shadow-2xl">
         <header className="flex items-center gap-3 py-3 px-4">
           <div className="relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 md:w-16 md:h-16">
                 <Image

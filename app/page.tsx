@@ -81,7 +81,7 @@ export default async function Home({ searchParams }: HomeProps) {
         )}
       </div>
     )}
-  <div className="relative z-10 mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-neutral-700 shadow-2xl">
+  <div className="relative z-10 mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-transparent shadow-2xl">
           <header className="flex flex-col py-2 px-5">
             <div className="flex flex-row items-center gap-1 w-full">
               <div className="relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 md:w-16 md:h-16">

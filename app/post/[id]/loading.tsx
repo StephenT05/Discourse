@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <div className="bg-[#F0F0F0] dark:bg-neutral-950 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')] dark:bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] bg-repeat dark:bg-repeat flex min-h-screen flex-col justify-center">
-      <div className="mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-neutral-700 shadow-2xl">
+      <div className="mx-auto flex w-full max-w-full md:max-w-md flex-1 flex-col sm:p-3 sm:px-5 md:px-0 lg:max-w-xl bg-white dark:bg-black/30 border-2 border-neutral-800 dark:border-transparent shadow-2xl">
         <main className="mt-2 flex flex-1 flex-col w-full">
           <div className="px-4 flex-1">
             <div className="max-w-3xl mx-auto p-6">
