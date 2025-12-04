@@ -12,7 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function AuthButton() {
+interface AuthButtonProps {
+  className?: string;
+}
+
+export function AuthButton({ className }: AuthButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { data: session } = authClient.useSession();
@@ -35,7 +39,7 @@ export function AuthButton() {
 
   if (!session?.user) {
     return (
-      <Button onClick={() => router.push("/login")} variant="outline">
+      <Button onClick={() => router.push("/login")} variant="outline" className={className}>
         Sign In
       </Button>
     );
@@ -44,7 +48,7 @@ export function AuthButton() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost">{session.user.name || session.user.email}</Button>
+        <Button variant="ghost" className={className}>{session.user.name || session.user.email}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => router.push("/account")}>
